@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Estilo de Impresión para Fichas Clínicas de Turno
+   Optimizado para hojas de cabecera y entrega de turno en urgencias
+   ========================================================================== */
+
+@media print {
+  /* Ocultar elementos de navegación y UI interactiva */
+  .main-header,
+  .clinical-disclaimer-bar,
+  .search-hero,
+  .main-footer,
+  .fav-btn,
+  .icon-btn,
+  .sheet-modal-backdrop,
+  .notes-drawer-backdrop,
+  .toast-container,
+  .sheet-header-actions,
+  .nav-tabs,
+  .filter-chips,
+  .btn-open-sheet {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Mostrar la ficha clínica abierta expandida y limpia */
+  .sheet-modal-backdrop.open {
+    position: static !important;
+    display: block !important;
+    background: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .sheet-modal-container {
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+
+  .sivigila-banner {
+    border: 2px solid black !important;
+    background: #f0f0f0 !important;
+    color: black !important;
+  }
+
+  .triad-box {
+    border: 2px solid #333 !important;
+    background: #fdfdfd !important;
+    color: black !important;
+    page-break-inside: avoid;
+  }
+
+  .tab-pane {
+    display: flex !important;
+    margin-bottom: 1.5rem !important;
+    page-break-inside: avoid;
+  }
+
+  .sheet-tabs {
+    display: none !important;
+  }
+
+  .warnings-prohibition-box {
+    border: 2px solid black !important;
+    background: #f8f8f8 !important;
+    color: black !important;
+  }
+
+  .red-flags-box {
+    border: 2px solid black !important;
+    background: #f9f9f9 !important;
+    color: black !important;
+  }
+
+  h1, h2, h3, h4 {
+    color: black !important;
+  }
+}
