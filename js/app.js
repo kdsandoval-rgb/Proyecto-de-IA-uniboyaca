@@ -465,13 +465,13 @@ function openNotesDrawer(diseaseId) {
   elements.notesInputContact.oninput = handleAutoSave;
   elements.notesInputClinical.oninput = handleAutoSave;
 
-  elements.notesDrawer.parentElement.classList.add("open");
-  elements.notesDrawer.parentElement.setAttribute("aria-hidden", "false");
+  elements.notesDrawer.classList.add("open");
+  elements.notesDrawer.setAttribute("aria-hidden", "false");
 }
 
 function closeNotesDrawer() {
-  elements.notesDrawer.parentElement.classList.remove("open");
-  elements.notesDrawer.parentElement.setAttribute("aria-hidden", "true");
+  elements.notesDrawer.classList.remove("open");
+  elements.notesDrawer.setAttribute("aria-hidden", "true");
   // Actualizar tarjeta en grilla si cambió
   performSearch();
   if (currentView === "notes") {
@@ -734,8 +734,8 @@ function init() {
 
   // 7. Drawer de Notas
   elements.notesDrawerClose.addEventListener("click", closeNotesDrawer);
-  elements.notesDrawer.parentElement.addEventListener("click", (e) => {
-    if (e.target === elements.notesDrawer.parentElement) closeNotesDrawer();
+  elements.notesDrawer.addEventListener("click", (e) => {
+    if (e.target === elements.notesDrawer) closeNotesDrawer();
   });
 
   // 8. Modal de Información
@@ -752,7 +752,7 @@ function init() {
   // 9. Atajos de teclado (Esc para cerrar modales, / para buscar)
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      if (elements.notesDrawer.parentElement.classList.contains("open")) {
+      if (elements.notesDrawer.classList.contains("open")) {
         closeNotesDrawer();
       } else if (elements.sheetModal.classList.contains("open")) {
         closeSheetModal();
